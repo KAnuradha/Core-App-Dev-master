@@ -16,21 +16,32 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 
-from registration.views import create_user, register_user, register_form, home
-from login.views import login_user, login
+# from registration.views import create_user, register_user, register_form, home
+# from login.views import login_user, login
+# from activate.views import activate_user
+# from signup.views import signup
+from registration.views import create, generate_email, resend,accounts
+from login.views import home, log_in, login, forgot,password
 from activate.views import activate_user
 from signup.views import signup
+from property.views import main, show, save_property
 
 admin.autodiscover()
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^home/$', home),
-	url(r'^registration_form/$', create_user),
-	url(r'^register_user/$', register_user),
-	url(r'^login/$', login),
-	url(r'^activate/$', activate_user),
-	url(r'^signup/$', signup),
-    url(r'^login_user/$', login_user),
-    url(r'^register/$', register_form),
+    url(r'^signup/$',signup),
+    url(r'^log_in/$',log_in),
+    url(r'^login/$', login),
+    url(r'^create/$', create),
+    url(r'^forgot/$',password),
+    url(r'^forgotpassword/$', forgot),
+    url(r'^generate_email/$',generate_email),
+    url(r'^activate_user/$', activate_user), 
+    url(r'^accounts/$', accounts),
+    url(r'^resend/$', resend),
+    url(r'^main/$', main),
+    url(r'^show/$', show),
+    url(r'^save_property/$',save_property),
 ]

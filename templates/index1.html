@@ -1,0 +1,217 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <!-- Place favicon.ico in the root directory -->
+    <link href="https://fonts.googleapis.com/css?family=Asap:400,700" rel="stylesheet">
+    <link rel="stylesheet" href="../static/css/normalize.css">
+    <link rel="stylesheet" href="../static/stylesheets/screen.css">
+    <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+</head>
+
+<body>
+    <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+    <!-- Add your site or application content here -->
+    <header>
+        <div class="container">
+
+            <!-- Static navbar -->
+            <nav class="navbar navbar-default">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <a type="button" class="navbar-toggle pull-right collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+
+                        </a>
+                        <ul class="main-menu pull-right">
+                            <li><a href="/log_in/">LOGIN</a>
+                            </li>
+                            <li><a href="/signup/">SIGNUP</a>
+                            </li>
+                        </ul>
+                        <h1 class="logo"><a class="navbar-brand" href="#">COOSTA</a></h1>
+                    </div>
+                    <div id="navbar" class="navbar-collapse collapse">
+                        <ul class="nav navbar-nav navbar-right">
+                            <li class="active"><a href="log_in">LOGIN</a>
+                            </li>
+                            <li><a href="/signup/">SIGNUP</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <!--navbar-->
+            
+            <div class="row">
+                <div class="search-form">
+                <form class="form-inline" action="/show/" method="POST">{% csrf_token%}
+                    <form class="form-inline">
+                        <div class="input-group">
+                            <input class="form-control" name="address" placeholder="Select City Enter Area or Locality or Pincode">
+                            <button type="button" class="btn btn-default" aria-label="Help"><i class="icon-search"></i></button>
+
+                        </div>
+                    </form>
+                </div>
+            </div>
+            
+            <!--search-form-->
+    </header>
+    <!--header-->
+    <section class="content-wrapper">
+        <div class="container">
+            <div class="property-box">
+                <h4>LIST A PROPERTY</h4>
+                <p>Lorem ipsum dolor sit amet, luctus sapien massa vivamus leo, vitae conubia morbi mus sodales molestie dui, ac sollicitudin urna vel. Lorem wisi interdum done</p>
+                <a href="/signup/" class="btn-primary">Sign up</a>
+            </div>
+            <!--property-box-->
+            <div class="steps-view">
+                <h2>Steps indicative of the sale process</h2>
+                <div class="row bs-wizard" style="border-bottom:0;">
+                    <div class="col-xs-4 bs-wizard-step complete">
+                        <div class="progress">
+                            <div class="progress-bar"></div>
+                        </div>
+                        <a href="#" class="bs-wizard-dot"></a>
+                        <div class="text-center bs-wizard-stepnum">Step 1</div>
+                        <div class="bs-wizard-info text-center">Lorem ipsum dolor sit amet, luctus sapien massa vivamus leo, vitae conubia morbi mus sodales molestie dui, ac sollicitudin urna vel.</div>
+                    </div>
+
+                    <div class="col-xs-4 bs-wizard-step complete">
+                        <div class="progress">
+                            <div class="progress-bar"></div>
+                        </div>
+                        <a href="#" class="bs-wizard-dot"></a>
+                        <div class="text-center bs-wizard-stepnum">Step 2</div>
+                        <div class="bs-wizard-info text-center">Lorem ipsum dolor sit amet, luctus sapien massa vivamus leo, vitae conubia morbi mus sodales molestie dui, ac sollicitudin urna vel.</div>
+                    </div>
+
+                    <div class="col-xs-4 bs-wizard-step active">
+                        <div class="progress">
+                            <div class="progress-bar"></div>
+                        </div>
+                        <a href="#" class="bs-wizard-dot"></a>
+                        <div class="text-center bs-wizard-stepnum">Step 3</div>
+                        <div class="bs-wizard-info text-center">Lorem ipsum dolor sit amet, luctus sapien massa vivamus leo, vitae conubia morbi mus sodales molestie dui, ac sollicitudin urna vel.</div>
+                    </div>
+                </div>
+            </div>
+            <!--steps-view-->
+        </div>
+    </section>
+    <!--content-wrapper-->
+    <section class="value-proposition">
+        <h2>VALUE PROPOSITION</h2>
+    </section>
+    <!--value-proposition-->
+    <section class="features-wrapper">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8">
+                    <h2>Lorem Ipsum is simply dummy text of the printing </h2>
+                    <ul class="list-style-01">
+                        <li>Lorem Ipsum is simply dummy text of the printing</li>
+                        <li>Typesetting industry. Lorem Ipsum has been the industry's</li>
+                        <li>Standard dummy text ever since the 1500s,</li>
+                        <li>When an unknown printer took a galley of.</li>
+                        <li>Type and scrambled it to make a type specimen book.</li>
+                        <li>The leap into electronic typesetting,</li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-wrapper">
+                        <form action="/create/" method="POST">{% csrf_token %}
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Name</label>
+                                <input type="text" name="name" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Email</label>
+                                <input type="email" name="email" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label>Choose Password</label>
+                                <input type="password" name="password" class="form-control">
+                            </div>
+                            <div class="btn-wrapper">
+                                <button type="submit" class="btn btn-primary">SIGN UP</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--features-wrapper-->
+
+    <footer>
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-logo"></div>
+                <ul class="social-connect">
+                    <li><a href="#"><i class="icon-facebook"></i></a></li>
+                    <li><a href="#"><i class="icon-gplus"></i></a></li>
+                    <li><a href="#"><i class="icon-twitter"></i></a></li>
+                    <li><a href="#"><i class="icon-linkedin"></i></a></li>
+                </ul>
+                <ul class="footer-menus">
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">How It Works</a></li>
+                    <li><a href="#">Help &amp; FAQ</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+            <div class="row">
+                <div class="col-md-6 col-xs-12">2016 Copyrights Reserved.</div>
+                <ul class="col-md-6 pull-right lower-menu col-xs-12">
+                    <li><a href="#">Terms Of Use</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                </ul>
+            </div>
+        </div>
+
+    </footer>
+    <!--footer-->
+
+    <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+    <script>
+        window.jQuery || document.write('<script src="js/vendor/jquery-1.12.0.min.js"><\/script>')
+
+    </script>
+    <script src="js/plugins.js"></script>
+
+    <script src="js/main.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+    <script>
+        (function(b, o, i, l, e, r) {
+            b.GoogleAnalyticsObject = l;
+            b[l] || (b[l] =
+                function() {
+                    (b[l].q = b[l].q || []).push(arguments)
+                });
+            b[l].l = +new Date;
+            e = o.createElement(i);
+            r = o.getElementsByTagName(i)[0];
+            e.src = 'https://www.google-analytics.com/analytics.js';
+            r.parentNode.insertBefore(e, r)
+        }(window, document, 'script', 'ga'));
+        ga('create', 'UA-XXXXX-X', 'auto');
+        ga('send', 'pageview');
+
+    </script>
+</body>
+
+</html>

@@ -1,4 +1,4 @@
-from django.shortcuts import render_to_response
+from django.shortcuts import render
 
 def signup(request):
-    return render_to_response('signup.html')
+    return render(request,'sign-up.html')

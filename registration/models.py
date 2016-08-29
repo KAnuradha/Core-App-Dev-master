@@ -13,3 +13,13 @@ class HubreeUser(models.Model):
     password = models.TextField()
     verificationstatus = models.BooleanField(default=False)
     email = models.EmailField(max_length=70, blank=True, null=True, unique=True)
+
+
+
+
+class Hubree(models.Model):
+    userid = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    name = models.CharField(max_length=30)
+    email = models.EmailField()
+    password = models.CharField(max_length=15)
+    verificationstatus = models.BooleanField(default=False)

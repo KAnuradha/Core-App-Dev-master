@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Coosta</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="../static/css/bootstrap.min.css" rel="stylesheet" />
+	<link href="https://fonts.googleapis.com/css?family=Asap:400,700" rel="stylesheet" />
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet"/>
+    <!-- Custom CSS -->
+    <link href="../static/css/logo-nav.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span><img src="img/menu_icon.png" alt=""/></span>
+              </button>
+              <a class="navbar-brand" href="#">
+                <img src="../static/img/logo.png" class="img-resposive" alt="Coosta" title="Coosta"/>
+              </a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Hey Natasha
+                        <span class="fa fa-down"></span></a>
+                        <ul class="dropdown-menu">
+                        <li><a href="#">Page 1-1</a></li>
+                        <li><a href="#">Page 1-2</a></li>
+                        <li><a href="#">Page 1-3</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+	<br/><br/>
+
+     <!-- Page Content -->
+  <form method="POST" name='form'>{% csrf_token %}
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <h3>Edit Property Details</h3>
+                <br/>
+                <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                    <label >Property Title</label>
+                    <input type="text" class="form-control" id="email" name="property_title" value={{data.0}} >
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                    <label >Address</label>
+                    <input type="text" class="form-control" id="email" name="address" value={{data.1}} >
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+                
+                <div class="col-md-3">
+                    <div class="form-group">
+                    <label >City</label>
+                    <input type="text" class="form-control" id="email" name="city" value={{data.2}}>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-group">
+                    <label >State</label>
+                    <input type="text" class="form-control" id="email" name="state" value={{data.3}}>
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+                <div class="col-md-3">
+                    <div class="form-group">
+                    <label >Zip Code</label>
+                    <input type="text" class="form-control" id="email"  name="zip_code" value={{data.4}}>
+                    </div>
+                </div>
+            
+                <div class="clearfix"></div>
+                
+                
+                </div>
+                
+                <br/>
+                <br/>
+                
+                <h5>Property Highlights</h5>
+                <br/>
+                <div class="row">
+                <div class="col-md-3">
+                    <div class="form-group">
+                    	<label >Home Type</label>
+                    	<select class="form-control selectpicker" name='home_type' id="gender1" >
+                        <option>Present Type</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="clearfix"></div>
+                
+              <div class="col-md-2 col-xs-6">
+                    <div class="form-group">
+                    	<label>Beds</label>
+                    	<input type="text" class="form-control" id="email" name="beds" value={{data.5}} >
+                    </div>
+                </div>
+                
+              <div class="col-md-2 col-xs-6">
+                    <div class="form-group">
+                    	<label>Baths</label>
+                    	<input type="text" class="form-control" id="email" name="baths" value={{data.6}} >
+                    </div>
+                </div>
+                
+              <div class="col-md-2 col-xs-6">
+                    <div class="form-group">
+                    	<label >Rooms</label>
+                    	<input type="text" class="form-control" id="email" name="rooms" value={{data.7}} >
+                    </div>
+                </div>
+                
+              <div class="col-md-2 col-xs-6">
+                    <div class="form-group">
+                    	<label>Property Size</label>
+                    	<input type="text" class="form-control" id="email" name="property_size" value={{data.8}} >
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+                
+              <div class="col-md-8">
+                    <div class="form-group">
+                    <label >Add Description</label>
+                     <textarea class="form-control" rows="3" name='description' id="comment" ></textarea>
+                    </div>
+                </div>
+                 <div class="clearfix"></div>
+                 
+                  <div class="col-md-8">
+                    <div class="form-group">
+                    <label >Add Other Features</label>
+                     <textarea class="form-control" rows="3" name='other_features'id="comment"></textarea>
+                    </div>
+                </div>
+                 <div class="clearfix"></div>
+                 
+                 <div class="col-md-12"><h5>Property Highlights</h5></div>
+                 <div class="clearfix"></div>
+                 <br/>
+                 <div class="col-md-3 col-sm-3 col-xs-3 text-center"><img src="../static/img/buliding_img.jpg" class="img-responsive"></div>
+                 <div class="col-md-3 col-sm-3 col-xs-3 text-center"><img src="../static/img/buliding_img.jpg" class="img-responsive"></div>
+                 <div class="col-md-3 col-sm-3 col-xs-3 text-center">
+                 	<div id="navi"><img src="../static/img/buliding_img.jpg" class="img-responsive"></div>
+                    <div id="infoi"><a href="Javascript:void();"><span class="fa fa-2x fa-times-circle pull-right"></span></a></div>
+                  </div>
+                 <div class="col-md-3 col-sm-3 col-xs-3 text-center">
+                 	<div id="navi"><img src="../static/img/buliding_img.jpg" class="img-responsive"></div>
+                    <div id="infoi"><a href="Javascript:void();"><span class="fa fa-2x fa-times-circle pull-right"></span></a></div>
+                 </div>
+                 <div class="clearfix"></div>
+                
+                 <br/>
+                
+                 <div class="col-md-12 text-center"><div class="lite_gry_bg">DRAG & DROP TO <a href="Javascript:void(0);">UPLOAD</a></div></div>
+                 <div class="clearfix"></div>
+                 <br/>
+                 
+                 <div class="col-md-12"><h5>Change Property Price</h5></div>
+                  <div class="clearfix"></div>
+                 <br/>
+                 <div class="col-md-5"><div class="lite_gry_bg_s">Display Default Price here</div></div>
+                 <div class="clearfix">&nbsp;</div>
+                 <div class="col-md-5"><div class="lite_gry_bg_s">Zillow Valuation API Call <br/> https://app.uxpin.com/edit/6267454#?id_page=56686767</div></div>
+                 <div class="clearfix">&nbsp;</div>
+                 <div class="col-md-5"><div class="lite_gry_bg_s">Link 1 <br/> https://app.uxpin.com/edit/6267454#?id_page=56686767</div></div>
+                 <div class="clearfix">&nbsp;</div>
+                 <div class="col-md-5"><div class="lite_gry_bg_s">Link 2 <br/> https://app.uxpin.com/edit/6267454#?id_page=56686767</div></div>
+                 <div class="clearfix">&nbsp;</div>{% csrf_token %}
+                <div class="col-md-12"><input type="submit" class="btn btn-sample btn-lg" value="Preview"> <input type="submit" class="btn btn-sample btn-lg" value="Save changes" onclick="javascript: form.action='/save_property/';"></div>
+                
+               <div class="clearfix"></div>
+                </div>
+                </form>
+                <br/>
+                <br/>
+                
+            </div>
+       		<div class="clearfix"></div>
+        </div>
+    </div>
+    <!-- /.container -->
+    <br/>
+    <br/>
+    
+    
+    <div class="container-fluid footer_bg">
+    	<div class="row">
+        	<div align="center"><img src="../static/img/f_logo.png"></div>
+            <br/>
+            <div align="center"><a href="#" class="con_siz"><span class="fa fa-facebook"></span></a> &nbsp; <a href="#" class="con_siz"><span class="fa fa-google-plus"></span></a> &nbsp; <a href="#" class="con_siz"><span class="fa fa-twitter"></span></a> &nbsp; <a href="#" class="con_siz"><span class="fa fa-linkedin"></span></a></div>
+            
+            <br/>
+            <div align="center"><a href="#" class="fnt_14">About Us</a> &nbsp; <a href="#" class="fnt_14">How It Works</a> &nbsp; <a href="#" class="fnt_14">Help & FAQ</a> &nbsp; <a href="#" class="fnt_14">Contact</a></div>
+     	 </div>
+         <br/><br/>
+         <div class="container">
+         <div class="row op_txt">
+         	<div class="col-md-6">2016 Copyrights Reserved.</div>
+            <div class="col-md-6 text-right"><a href="#" class="fnt_14">Terms Of Use</a> &nbsp; <a href="#" class="fnt_14">Privacy Policy</a></div>
+            <div class="clearfix"></div>
+         </div>
+         </div>
+    </div>
+
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+    <script>
+    $('.btn-toggle').click(function() {
+    $(this).find('.btn').toggleClass('active');  
+    
+    if ($(this).find('.btn-sample').size()>0) {
+    	$(this).find('.btn').toggleClass('btn-sample');
+    }
+    
+    $(this).find('.btn').toggleClass('btn-default');
+       
+});
+
+$('form').submit(function(){
+	alert($(this["options"]).val());
+    return false;
+});
+    </script>
+</body>
+
+</html>

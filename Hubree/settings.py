@@ -16,6 +16,7 @@ import os
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
+
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.9/howto/deployment/checklist/
 
@@ -43,6 +44,9 @@ INSTALLED_APPS = [
 	'registration',
 	'signup',
     'login',
+    'activate',
+    'property',
+    'googlemaps',
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -183,9 +187,6 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
 
-STATIC_URL = '/static/'
-
-STATIC_ROOT = os.path.join(BASE_DIR, "static/")
 
 REST_FRAMEWORK = {
  # Use Django's standard `django.contrib.auth` permissions,
@@ -201,6 +202,32 @@ REST_FRAMEWORK = {
  'rest_framework.renderers.JSONRenderer',
  )
 }
+# STATIC_ROOT = '/home/al1455/Downloads/Core-App-Dev-master/static/'
+# STATIC_URL = '/static/'
+
+
+# STATICFILES_DIRS = [
+#     os.path.join(BASE_DIR, "static"),
+#     os.path.join(STATIC_ROOT, "/home/al1455/Downloads/Core-App-Dev-master/static/")
+# ]
+
+
+BASE_DIR = os.path.dirname(os.path.dirname(__file__))
+SETTINGS_DIR=os.path.dirname(__file__)
+PROJECT_PATH=os.path.join(SETTINGS_DIR,os.pardir)
+PROJECT_PATH=os.path.abspath(PROJECT_PATH)
+STATIC_PATH=os.path.join(PROJECT_PATH,'static')
+STATIC_URL = '/static/'
+STATICFILES_DIRS = (
+    STATIC_PATH,
+    )
+
+
+STATICFILES_FINDERS = (
+'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+'django.contrib.staticfiles.finders.FileSystemFinder',
+)
+
 
 EMAIL_USE_TLS = True
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Place Autocomplete</title>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <style>
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+      #map {
+        height: 100%;
+      }
+
+    </style>
+  </head>
+  <body>
+
+  <div id="map"></div>
+  
+  <script type="text/javascript">
+    function initMap() {
+        var latlng = new google.maps.LatLng({{data.1}},{{data.2}}); // Here Lat and Lag values must be comes from show view function
+        var myOptions = {
+          zoom: 13,
+          center: latlng,
+          mapTypeId: google.maps.MapTypeId.ROADMAP
+        }
+        map = new google.maps.Map(document.getElementById("map"), myOptions);
+        var marker = new google.maps.Marker({
+            position: new google.maps.LatLng({{data.1}},{{data.2}}), // lat, lag values from show view function
+            map: map,
+            title: 'Hello World!'
+        });
+
+        var contentString = '<div id="content" style="width: 100px; height: 100px;"><b>{{data.0}}</b><div>';
+        // replace above address with dynamic address
+        var infowindow = new google.maps.InfoWindow({
+            content: contentString
+        });
+        infowindow.open(map,marker);
+
+        // To add the marker to the map, call setMap();
+        marker.setMap(map);
+    }
+  </script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCsESCWDJJgjXPCOB66N6VfkwHVYG8le9o&libraries=places&callback=initMap"
+        async defer></script>
+  </body>
+</html>
